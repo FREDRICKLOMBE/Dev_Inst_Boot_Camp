@@ -45,3 +45,24 @@ for key in keys_to_remove:
         sample_dict.pop(key, None) #None prevents an error if a key is missing.
 
 print(sample_dict)
+
+# For Loops and Dictionaries
+my_books = {
+  "title": "Harry Potter",
+  "author": "JK Rowling",
+}
+
+for key, value in my_books.items():
+    print(f"The {key} is {value}\n")
+
+#Enumerate each item in the iterable.
+for (index, items) in enumerate ("abcdefg"):
+    print(f"At position {index + 1} the letter is {items.upper()}")
+
+#Zip and Concatenate Iterables into a tuple:
+list1 = [1,2,3]
+list2 = ['a','b','c']
+list3 = [1.1, 2.2, 3.3, 4.4, 5.5]
+
+for item in zip(list1, list2, list3):
+    print(f"{item}\n")

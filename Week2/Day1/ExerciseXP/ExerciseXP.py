@@ -117,18 +117,67 @@ class Zoo():
     def __init__(self, zoo_name):
         self.zoo_name = zoo_name
         self.animals = []
-        self.groups = {}
 
  # Add one or more animals to the zoo
     def add_animal(self, *new_animal):
-        for animal in new_animal:
-            if animal not in self.animals:
-                self.animals.append(animal)
+        if new_animal not in self.animals:
+            self.animals.append(new_animal)
+            print(f"{new_animal} has been added to the zoo.")
 
-                print(f"{animal} has been added to the zoo.")
+        else:
+            print(f"{new_animal} already exists in the zoo.")
+
+ # Print all animals currently in the zoo
+    def get_animals(self):
+        print("These are the animals currently available in the zoo.")
+        for animal in self.animals:
+            print(f"{animal.title()}")
+
+ # Remove an animal from the zoo
+    def sell_animal(self, animal_sold):
+            if animal_sold in self.animals:
+                self.animals.remove(animal_sold)
+                print(f"{animal_sold} has been sold.")
 
             else:
-                print(f"{animal} already exists in the zoo.")
+                print(f"{animal_sold} does not exist in the zoo.")
+
+
+ #Sort animals alphabetically and group them by first order
+    def sort_animals(self):
+        sorted_animals = sorted(self.animals)
+        groups = {}
+
+        for animal in sorted_animals:
+            first_letter = animal[0].upper()
+
+            if first_letter not in groups:
+                groups[first_letter] = []
+
+            groups[first_letter].append(animal)
+
+        return groups
+
+     #prints the grouped animals as created by sort_animals().
+    def get_groups(self):
+        groups = self.sort_animals()
+
+        for letter, animals in groups.items():
+            print(f"{letter} : {len(animals)}")
+
+zoo = Zoo("My Zoo")
+
+zoo = Zoo("My Zoo")
+
+zoo.add_animal("lion")
+zoo.add_animal("cat")
+zoo.add_animal("dog")
+zoo.add_animal("cheetah")
+zoo.add_animal("elephant")
+zoo.add_animal("monkey")
+
+zoo.get_groups()
+
 
 
 
