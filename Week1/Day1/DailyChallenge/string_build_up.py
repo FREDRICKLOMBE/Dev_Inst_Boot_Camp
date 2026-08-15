@@ -2,36 +2,35 @@
 # 1. Ask for User Input: exactly 10 characters long
 string = input("Enter a 10 characters long string: ")
 
-# 2. Check the Length of the String with considering spaces
-count = 0
-for char in string:
-    if char != " ":
-        count += 1
-
- # Checking length after counting is done:
-if count == 10:
-    print("String perfect")
-
-elif count > 10:
-    print("String is too long")
-
+# 2. Check the Length of the String with spaces
+if len(string) < 10:
+    print("String not long enough")
+elif len(string) > 10:
+    print("String too long")
 else:
-    print("String is too short")
+    print("Perfect string")
 
-#3. Build the String Character by Characters
-word = ""
-for char in string:
-    if char != " ":
-         word += char
-    print(word)
+#3. Print the First and Last Characters after validation:
+    print(f"First letter: {string[0]}"
+          f"\nLast letter: {string[-1]}")
 
-#4 Shuffling the words
-import random
+# 4. Build the String Character by Characters
+    word = ""
+    for char in string:
+        word += char
+        print(word)
 
-sentence = "the quick brown fox jumps"
-words = sentence.split()      # turns the string into a list of words
+ # 5 Shuffling the words
+    import random
 
-random.shuffle(words)         # shuffles the list in place
+    words = string.split()  # turns the string into a list of words
 
-shuffled_sentence = " ".join(words)   # joins the list back into a string
-print(shuffled_sentence)
+    random.shuffle(words)  # shuffles the list in place
+
+    shuffled_sentence = " ".join(words)  # joins the list back into a string
+    print(shuffled_sentence)
+
+
+
+
+
