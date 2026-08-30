@@ -1,11 +1,18 @@
+class Circle:
+    color = "red"
 
-matrix = [
-    [10, 20, 30],
-    [40, 50, 60],
-    [70, 80, 90]
-]
+    def __init__ (self, diameter):
+        self.diameter = diameter
 
-for row in range(len(matrix)):
-    for col in range(len(matrix[row])):
-        print(matrix[row][col], end=' ')
-    print()
+    def grow(self, factor = 2):
+        self.diameter = self.diameter * factor
+
+    def get_color(self):
+        return Circle.color
+
+
+circle1 = Circle(2)
+print(circle1.color)
+print(Circle.color)
+print(circle1.get_color())
+print(circle1.diameter)
