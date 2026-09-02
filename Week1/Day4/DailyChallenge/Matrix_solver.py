@@ -5,28 +5,30 @@ h%x
 i ?
 sM# 
 $a 
-#t%
-'''
+#t%'''
 
-""" Step 1 & 2: Transforming the String into a 2D List """
-# Processing Columns
-new_matrix = []
+# Step 1: Convert string to 2D list
+matrix = []
 
-rows = MATRIX_STR.strip().splitlines()
-print(rows)
+for row in MATRIX_STR.strip().split("\n"):
+    matrix.append(list(row))
 
-for row in rows:
-    new_matrix.append(list(row))
+# Step 2-4: Read columns and process characters
+message = ""
+symbol_found = False
 
-print(new_matrix)
+for col in range(len(matrix[0])):
+    for row in range(len(matrix)):
+        char = matrix[row][col]
 
-""" Step 3: Filtering Alpha Characters """
-temp_string = ""
+        if char.isalpha():
+            if symbol_found:
+                message += " "
+                symbol_found = False
 
-for row in range(len(new_matrix)):
-    for col in range(len(new_matrix[row])):
+            message += char
+        else:
+            symbol_found = True
 
-        if new_matrix[row][col].isalpha():
-            temp_string = temp_string + (new_matrix[row][col])
-
-print(temp_string)
+# Step 5: Print decoded message
+print(message)
