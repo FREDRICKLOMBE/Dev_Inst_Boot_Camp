@@ -1,4 +1,3 @@
-import random
 ## 🌟 Exercise 1: Pets
 # Use the provided Pets and Cat classes to create a Siamese breed,
 # instantiate cat objects, and use the Pets class to manage them.
@@ -19,7 +18,7 @@ class Cat():
         self.age = age
 
     def walk(self):
-        return f"{self.name.title()} is just walking around"
+        return f"{self.name} is just walking around"
 
 """ Create 3 variety classes that inherits from the Cat class   """
 class Bengal(Cat):
@@ -33,18 +32,6 @@ class Chartreux(Cat):
 class Siamese(Cat):
     def sing(self, sounds):
         return sounds
-
-""" Create Pets instances from all varieties """
-bengal_obj = Bengal("Akamaru", 20)
-chart_obj = Chartreux("Naruto", 21)
-siamese_obj = Siamese("Sasuke", 22)
-
-""" Create a list of cat instances"""
-all_cats = [bengal_obj, chart_obj, siamese_obj]
-
-""" Take cats for a walk"""
-sara_pets = Pets(all_cats)
-sara_pets.walk()
 
 """  🌟 Exercise 2: Dogs """
 
@@ -68,77 +55,13 @@ class Dog:
         if my_power > other_power:
             return f'{self.name} wins'
 
-        if my_power < other_power:
+        elif my_power < other_power:
             return f'{other_dog.name} wins'
 
         else:
-            return "Its a tie"
+            return "It's a tie"
 
-""" Create Dog Instances """
-dog_2 = Dog("Sakura", 5, 20)
-dog_3 = Dog("Itachi", 7, 30)
-dog_4 = Dog("Madara", 6, 40)
-
-""" Test Dog Methods """
-# print(dog_4.bark())
-# print(dog_2.bark())
-# print(dog_3.bark())
-#
-# print(dog_2.run_speed())
-# print(dog_3.run_speed())
-# print(dog_4.run_speed())
-#
-# print(dog_4.fight(dog_2))
-# print(dog_3.fight(dog_2))
-# print(dog_3.fight(dog_4))
-
-
-from random import choice
-
-# from exercise2 import Dog
-
-
-class PetDog(Dog):
-    def __init__(self, name, age, weight, trained=False):
-        super().__init__(name, age, weight)
-        self.trained = trained
-
-    def train(self):
-        print(self.bark())
-        self.trained = True
-
-    def play(self, *args):
-        dogs = [self.name]
-
-        for dog in args:
-            if isinstance(dog, Dog):
-                dogs.append(dog.name)
-            else:
-                dogs.append(str(dog))
-
-        print(f"{', '.join(dogs)} all play together")
-
-    def do_a_trick(self):
-        tricks = [
-            "does a barrel roll",
-            "stands on his back legs",
-            "shakes your hand",
-            "plays dead",
-        ]
-
-        if self.trained:
-            print(f"{self.name} {choice(tricks)}")
-        else:
-            print(f"{self.name} needs training first")
-
-
-fido = PetDog("Fido", 2, 10)
-buddy = PetDog("Buddy", 4, 20)
-max_dog = PetDog("Max", 3, 15)
-
-fido.train()
-fido.play(buddy, max_dog)
-fido.do_a_trick()
+# Exercise 3 is in ExerciseXP_PetDog.py.
 
 class Person:
     def __init__(self, first_name, age):
@@ -180,12 +103,44 @@ class Family:
             print(f"{person.first_name}, {person.age} years old")
 
 
-smith_family = Family("Smith")
+if __name__ == "__main__":
+    """ Create Pets instances from all varieties """
+    bengal_obj = Bengal("Akamaru", 20)
+    chart_obj = Chartreux("Naruto", 21)
+    siamese_obj = Siamese("Sasuke", 22)
 
-smith_family.born("Alex", 20)
-smith_family.born("Maya", 15)
-smith_family.born("Sam", 30)
+    """ Create a list of cat instances"""
+    all_cats = [bengal_obj, chart_obj, siamese_obj]
 
-smith_family.check_majority("Alex")
-smith_family.check_majority("Maya")
-smith_family.family_presentation()
+    """ Take cats for a walk"""
+    sara_pets = Pets(all_cats)
+    sara_pets.walk()
+
+    """ Create Dog Instances """
+    dog_2 = Dog("Sakura", 5, 20)
+    dog_3 = Dog("Itachi", 7, 30)
+    dog_4 = Dog("Madara", 6, 40)
+
+    """ Test Dog Methods """
+    print(dog_4.bark())
+    print(dog_2.bark())
+    print(dog_3.bark())
+
+    print(dog_2.run_speed())
+    print(dog_3.run_speed())
+    print(dog_4.run_speed())
+
+    print(dog_4.fight(dog_2))
+    print(dog_3.fight(dog_2))
+    print(dog_3.fight(dog_4))
+
+    smith_family = Family("Smith")
+
+    smith_family.born("Alex", 20)
+    smith_family.born("Maya", 15)
+    smith_family.born("Sam", 18)
+
+    smith_family.check_majority("Alex")
+    smith_family.check_majority("Maya")
+    smith_family.check_majority("Sam")
+    smith_family.family_presentation()
