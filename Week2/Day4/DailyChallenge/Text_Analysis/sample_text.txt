@@ -1,0 +1,2 @@
+Python makes text analysis simple. Python reads files and Python counts words.
+Text analysis helps us understand words.

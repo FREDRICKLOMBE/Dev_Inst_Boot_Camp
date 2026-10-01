@@ -1,0 +1,15 @@
+Exercise 1 - input: 5
+This program generates a random sentence using a word list.
+Enter a sentence length between 2 and 20: blameworthy brachydomes aerogrammes antigovernment antarthritic
+
+Exercise 1 - input: 21
+This program generates a random sentence using a word list.
+Enter a sentence length between 2 and 20: Error: The sentence length must be between 2 and 20.
+
+Exercise 1 - input: abc
+This program generates a random sentence using a word list.
+Enter a sentence length between 2 and 20: Error: The sentence length must be an integer.
+
+Exercise 2
+7000
+Modified JSON saved to employee.json

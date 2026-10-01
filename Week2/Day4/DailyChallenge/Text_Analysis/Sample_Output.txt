@@ -1,0 +1,23 @@
+Part I: Analyzing a Simple String
+Original text: A good book would sometimes cost as much as a good house.
+Frequency of 'good': 2
+Frequency of 'python': None
+Most common word: good
+Unique words: ['A', 'a', 'as', 'book', 'cost', 'good', 'house.', 'much', 'sometimes', 'would']
+
+Part II: Analyzing Text from a File
+Frequency of 'Python': 3
+Most common word: Python
+Unique words: ['Python', 'Text', 'analysis', 'and', 'counts', 'files', 'helps', 'makes', 'reads', 'simple.', 'text', 'understand', 'us', 'words.']
+
+Bonus: Text Modification
+Original text: Hello, world! This is a Python test with 123 numbers & symbols_@#.
+Without punctuation: Hello world This is a Python test with 123 numbers  symbols
+Without stop words: Hello, world! Python test 123 numbers & symbols_@#.
+Without special characters: Hello world This is a Python test with 123 numbers  symbols
+File without stop words: Python makes text analysis simple. Python reads files Python counts words. Text analysis helps us understand words.
+
+Empty Text
+None
+None
+[]
