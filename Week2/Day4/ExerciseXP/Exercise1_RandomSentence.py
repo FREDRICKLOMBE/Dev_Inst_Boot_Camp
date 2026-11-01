@@ -63,6 +63,9 @@ if __name__ == "__main__":
     main()
 
 
+import json
+from pathlib import Path
+
 ## 🌟 Exercise 2: Working with JSON
 # Access a salary, add an employee's birthdate and save the updated JSON.
 
