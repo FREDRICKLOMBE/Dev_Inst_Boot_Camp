@@ -1,0 +1,40 @@
+BEGIN
+CREATE TABLE
+INSERT 0 4
+CREATE TABLE
+INSERT 0 2
+ id |  name   
+----+---------
+  5 | Pawan
+  6 | Sharlee
+  7 | Krish
+    | Avtaar
+(4 rows)
+
+ id 
+----
+  5
+   
+(2 rows)
+
+ count 
+-------
+     0
+(1 row)
+
+ count 
+-------
+     2
+(1 row)
+
+ count 
+-------
+     0
+(1 row)
+
+ count 
+-------
+     2
+(1 row)
+
+ROLLBACK
