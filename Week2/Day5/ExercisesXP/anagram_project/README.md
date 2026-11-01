@@ -52,3 +52,7 @@ an invalid menu option. Check that the menu returns after each result or error.
 Try `zzzzz` to see the dictionary-miss and no-anagrams messages.
 
 The class also accepts a custom word-list path: `AnagramChecker("my_words.txt")`.
+
+## Dictionary validation
+
+Startup rejects an empty dictionary with a clear error instead of reporting every word as absent. The bundled sowpods.txt was extracted from the course-linked archive.

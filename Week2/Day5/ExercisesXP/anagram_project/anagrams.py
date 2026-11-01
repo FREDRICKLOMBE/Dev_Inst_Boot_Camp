@@ -45,9 +45,9 @@ def main():
     """Load the dictionary once and keep the menu open until the user exits."""
     try:
         checker = AnagramChecker()
-    except (OSError, UnicodeError) as error:
+    except (OSError, UnicodeError, ValueError) as error:
         print(f"Could not load the word list: {error}")
-        print("Place a readable UTF-8 sowpods.txt beside anagram_checker.py.")
+        print("Place a nonempty, readable UTF-8 sowpods.txt beside anagram_checker.py.")
         return
 
     try:

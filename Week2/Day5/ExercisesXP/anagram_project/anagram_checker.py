@@ -26,6 +26,9 @@ class AnagramChecker:
                 line.strip().lower() for line in word_file if line.strip()
             }
 
+        if not self.words:
+            raise ValueError("The word list is empty. Restore the course sowpods.txt file.")
+
     def is_valid_word(self, word):
         """Return whether the word is present in the dictionary, ignoring case."""
         return word.strip().lower() in self.words
