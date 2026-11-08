@@ -2,10 +2,10 @@
 -- Predictions before execution: Q1 = 0, Q2 = 2, Q3 = 0, Q4 = 2.
 -- Temporary tables keep this puzzle separate from permanent database tables.
 BEGIN;
-CREATE TEMP TABLE FirstTab (id integer, name varchar(10));
+CREATE TABLE FirstTab (id integer, name varchar(10));
 INSERT INTO FirstTab VALUES
     (5, 'Pawan'), (6, 'Sharlee'), (7, 'Krish'), (NULL, 'Avtaar');
-CREATE TEMP TABLE SecondTab (id integer);
+CREATE TABLE SecondTab (id integer);
 INSERT INTO SecondTab VALUES (5), (NULL);
 SELECT * FROM FirstTab;
 SELECT * FROM SecondTab;
