@@ -1,5 +1,4 @@
 -- Day 2, Exercise 2: DVD Rental
--- Schema checked against the supplied ZIP. Run in the dvdrental database.
 -- Questions 8 and 9 use Inception as an example favorite movie.
 
 -- 1. All customer columns.
